@@ -1,0 +1,164 @@
+<!-- Header section -->
+<%- include("partials/header") %>
+
+<body>
+
+    <div id="wrapper">
+
+      <%- include("partials/nav") %>  
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Author
+                            <small><%=sess.db_user_name%></small>
+                        </h1>
+                        
+                    </div>
+                    
+                    
+                </div>
+                <!-- /.row -->
+                       
+                <!-- /.row -->
+                
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-file-text fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                  <div class="huge"><%=posts.length%></div>
+                        <div>Posts</div>
+                    </div>
+                </div>
+            </div>
+            <a href="/admin/posts?option=all_posts">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-comments fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                     <div class='huge'><%=comments.length%></div>
+                      <div>Comments</div>
+                    </div>
+                </div>
+            </div>
+            <a href="/admin/comments">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-user fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                    <div class='huge'><%=users.length%></div>
+                        <div> Users</div>
+                    </div>
+                </div>
+            </div>
+            <a href="users?option=all_users">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-list fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class='huge'><%=categories.length%></div>
+                         <div>Categories</div>
+                    </div>
+                </div>
+            </div>
+            <a href="/admin/categories">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+</div>
+              
+              
+                <!-- /.row -->
+                <div class="row">
+                  <div class="col">
+                    <div class="container">
+                      <script type="text/javascript">
+                  google.charts.load("current", {packages:['corechart']});
+                  google.charts.setOnLoadCallback(drawChart);
+                  function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                      ["Data", "Count", { role: "style" } ],
+                      ["Posts", <%=posts.length%>, "#1e6c9d"],
+                      ["Comments", <%=comments.length%>, "56b356"],
+                      ["Users", <%=users.length%>, "orange"],
+                      ["Categories", <%=categories.length%>, "color: red"]
+                    ]);
+
+                    var view = new google.visualization.DataView(data);
+                    /*view.setColumns([0, 1,
+                                     { calc: "stringify",
+                                       sourceColumn: 1,
+                                       type: "string",
+                                       role: "annotation" },
+                                     2]);
+                    */
+                    var options = {
+                      title: "Count",
+                      width: 600,
+                      height: 400,
+                      bar: {groupWidth: "95%"},
+                      legend: { position: "none" },
+                    };
+                    var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+                    chart.draw(view, options);
+                }
+                </script>
+                <div id="columnchart_values" style="height: 500px;"></div>
+                    </div>
+                  </div>
+             </div>
+          
+
+        <%- include("partials/footer") %>        

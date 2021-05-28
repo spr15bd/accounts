@@ -9,23 +9,13 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({secret: 'ssshhhhh'}));
-//let formidable = require('formidable');
 app.use(express.json());       // to support JSON-encoded bodies
 app.set("view engine","ejs");
 
 let connection = require("./connection.js");
 
 connection.connect();
-/*
-connection.query('SELECT * from categories', function (error, results, fields) {
-  if (error) {
-    console.log("Connection error");
-    throw error;
-  }
-  data = results;
-  
-});
-*/
+
 connection.query('SELECT * from posts WHERE post_status="published"', function (error, results, fields) {
   if (error) {
     console.log("Connection error");
@@ -36,7 +26,7 @@ connection.query('SELECT * from posts WHERE post_status="published"', function (
 });
 //connection.end();-- not working
 // make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
+
 app.use(express.static("public"));
 
 

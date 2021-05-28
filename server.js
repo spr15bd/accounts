@@ -586,55 +586,8 @@ app.get("/admin", (request, response) => {
   
 });
 
-app.get("/category", (request, response) => {
-  
-  console.log("rendering category");
-  response.render('category', { title: 'User List', userData: data,
-                             title: 'User List', userPosts: posts
-                           });
-  //response.sendFile(__dirname + "/views/index.html");
-});
 
-app.get("/admin/posts", (request, response) => {
-  let postToEdit;
-  let categories;
-  
-  // send categories data to edit post page since there is an option to change category with a dropdown
-  //new Promise((resolve) => {
-      connection.query('SELECT * from categories', function (error, results, fields) {
-        if (error) {
-          console.log("Connection error");
-          throw error;
-        }
-        
-        categories=results;
-      });
-      
-    //});
-  new Promise((resolve) => {
-      connection.query('SELECT * from posts', function (error, results, fields) {
-        if (error) {
-          console.log("Connection error");
-          throw error;
-        }
-        Object.keys(results).forEach((key) => {
-          if (results[key].post_id == request.query.edit) {
-            postToEdit = results[key];
-            
-          }
-        });
-        resolve(response.render('admin/posts', {  userData: results,
-                                                  categories: categories,
-                                                  userMessage: message,
-                                                  postToEdit: postToEdit,
-                                                  option: request.query.option,
-                                                  sess: sess
-        }));
-      });
-      
-    });
-  
-});
+
 
 app.get("/logout", (request, response) => {
   request.session.db_user_name=null;

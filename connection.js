@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-// changed connection to heliohost
+// connection to heliohost
 let connection = mysql.createConnection({
   host     : 'johnny.heliohost.org',
   user     : 'bdady_tiger',

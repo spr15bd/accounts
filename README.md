@@ -1,6 +1,6 @@
 # content-management-system
 
-A nodeJS content management system
+A nodeJS accounts system
 
 This consists of a server that serves node webpages, ejs files, and MySQL tables
 

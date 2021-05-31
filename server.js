@@ -1,7 +1,7 @@
 // server.js
 // where your node app starts
 
-let data, posts, search_posts, sess;
+let data, posts, invoices, search_posts, sess;
 let message="";
 const express = require("express");
 const session = require('express-session');
@@ -23,6 +23,14 @@ connection.query('SELECT * from posts WHERE post_status="published"', function (
   }
   posts = results;
   
+});
+connection.query('SELECT * from invoices', function (error, results, fields) {
+  if (error) {
+    console.log("Connection error");
+    throw error;
+  }
+  invoices = results;
+  console.log("invoices: "+invoices);
 });
 //connection.end();-- not working
 // make all the files in 'public' available

@@ -17,6 +17,7 @@ On the back-end,
 
 - the app starts at `server.js` - from here you can choose to enter invoices or view the purchase ledger
 - add frameworks and packages in `package.json`
+- -invoices served to vendor-review.ejs
 - safely store app secrets in `.env` (nobody can see this but you and people you invite)
 
 Click `Show` in the header to see your app live. Updates to your code will instantly deploy.

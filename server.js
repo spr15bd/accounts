@@ -37,6 +37,21 @@ connection.query('SELECT * from invoices', function (error, results, fields) {
 
 app.use(express.static("public"));
 
+app.get("/vendor-review", (request, response) => {
+  sess=request.session;
+  connection.query('SELECT * from invoices WHERE 1', function (error, results, fields) {
+    if (error) {
+      console.log("Connection error");
+      throw error;
+    }
+    console.log('The solution is: ' +results);
+    invoices = results;
+    response.render('index', { 
+                                title: 'User List', userData: invoices,
+                                sess:sess
+    });
+  });
+});
 
 app.get("/category", (request, response) => {
   sess=request.session;

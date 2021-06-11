@@ -8,7 +8,7 @@ This consists of a server that serves node webpages, ejs files, and MySQL tables
 
 On the front-end,
 
-- Edit `views/index.ejs` to change the content of the webpage
+- Edit `views/index.ejs` to change the content of the webpage - at present this is the main page of the app
 - `public/client.js` is the javacript that runs when you load the webpage
 - `public/style.css` is the styles for `views/index.html`
 - Drag in `assets`, like images or music, to add them to your project

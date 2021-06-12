@@ -12,7 +12,7 @@
            <!-- Blog Entries Column -->
             <div class="col-md-8">
              <%
-              
+              console.log("there is data")
               if(userData.length!=0){
                 
                 userData.forEach(function(posts){
@@ -35,10 +35,10 @@
 
                 <!-- First Blog Post -->
                 <h2>
-                    <a href=""><%=inv_date%></a>
+                    <a href="">Invoice Date: <%=inv_date%></a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php"><%=inv_num%></a>
+                    by <a href="index.php">Invoice number: <%=inv_num%></a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on <%=post_date%></p>
                 <hr>

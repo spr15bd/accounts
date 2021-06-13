@@ -15,17 +15,11 @@
               console.log("there is data")
               if(userData.length!=0){
                 
-                userData.forEach(function(posts){
-                  inv_num = posts.invoice_number;
-                  inv_date = posts.invoice_date;
-                  post_author = posts.post_author;
-                  post_date = posts.post_date;
-                  post_img = posts.post_img;
-                  post_content = posts.post_content;
-                  post_tags = posts.post_tags;
-
-
-              %>
+                userData.forEach(function(invoices){
+                  inv_num = invoices.invoice_no;
+                  inv_date = invoices.inv_date;
+                
+             %>
               
 
                 <h1 class="page-header">

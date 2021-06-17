@@ -37,7 +37,7 @@ connection.query('SELECT * from invoices', function (error, results, fields) {
 
 app.use(express.static("public"));
 
-app.get("/vendor-review", (request, response) => {
+app.get("/vendor_review", (request, response) => {
   sess=request.session;
   connection.query('SELECT * from invoices WHERE 1', function (error, results, fields) {
     if (error) {

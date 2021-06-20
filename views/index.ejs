@@ -12,12 +12,13 @@
            <!-- Blog Entries Column -->
             <div class="col-md-8">
              <%
-              console.log("there is data")
+             
               if(userData.length!=0){
-                
+                console.log("there is data in userData, num records: "+userData.length);
                 userData.forEach(function(invoices){
+                  console.log(invoices.invoice_no);
                   inv_num = invoices.invoice_no;
-                  inv_date = invoices.inv_date;
+                  inv_date = invoices.invoice_date;
                 
              %>
               
@@ -34,12 +35,12 @@
                 <p class="lead">
                     by <a href="index.php">Invoice number: <%=inv_num%></a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <%=post_date%></p>
+                  <%=invoices.invoice_id%>
                 <hr>
               
-                <a href=""><img class="img-responsive" src=<%=post_img%> alt=""></a>
+              
                 <hr>
-                <p><%-post_content%></p>and<%=sess.db_user_role%>
+                
                 <a class="btn btn-primary" href="">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>

@@ -37,7 +37,7 @@ connection.query('SELECT * from invoices', function (error, results, fields) {
 
 app.use(express.static("public"));
 
-app.get("/vendor-review", (request, response) => {
+app.get("/vendor_review", (request, response) => {
   sess=request.session;
   connection.query('SELECT * from invoices WHERE 1', function (error, results, fields) {
     if (error) {
@@ -626,28 +626,7 @@ app.get("/logout", (request, response) => {
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
   sess=request.session;
-  new Promise((resolve) => {
-    connection.query('SELECT * from categories', function (error, results, fields) {
-      if (error) {
-        console.log("Connection error");
-        throw error;
-      }
-      data = results;
   
-});
-    connection.query('SELECT * from posts WHERE post_status="published"', function (error, results, fields) {
-      if (error) {
-        console.log("Connection error");
-        throw error;
-      }
-      //console.log('The solution is: ', results);
-      response.render('index', { 
-                                  userData: data,
-                                  userPosts: results,
-                                  sess:sess
-      });
-    });
-  });
 });
   
 

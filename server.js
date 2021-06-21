@@ -626,7 +626,11 @@ app.get("/logout", (request, response) => {
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
   sess=request.session;
-  
+  response.render('index', { 
+                                  userData: data,
+                                  //userPosts: results,
+                                  sess:sess
+      });
 });
   
 

@@ -53,6 +53,15 @@ app.get("/vendor_review", (request, response) => {
   });
 });
 
+app.get("/enter_invoices", (request, response) => {
+  sess=request.session;
+  response.render('index', { 
+                                
+                                sess:sess
+  });
+  
+});
+
 app.get("/category", (request, response) => {
   sess=request.session;
   connection.query('SELECT * from posts WHERE post_cat_id=\"'+request.query.category+'\"', function (error, results, fields) {
@@ -626,7 +635,11 @@ app.get("/logout", (request, response) => {
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
   sess=request.session;
-  
+  response.render('index', { 
+                                  userData: data,
+                                  //userPosts: results,
+                                  sess:sess
+      });
 });
   
 

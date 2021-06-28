@@ -62,6 +62,33 @@ app.get("/enter_invoices", (request, response) => {
   
 });
 
+app.get("/amend_vendor", (request, response) => {
+  sess=request.session;
+  response.render('index', { 
+                                
+                                sess:sess
+  });
+  
+});
+
+app.get("/posting_log", (request, response) => {
+  sess=request.session;
+  response.render('index', { 
+                                
+                                sess:sess
+  });
+  
+});
+
+app.get("/payment_processing", (request, response) => {
+  sess=request.session;
+  response.render('index', { 
+                                
+                                sess:sess
+  });
+  
+});
+
 app.get("/category", (request, response) => {
   sess=request.session;
   connection.query('SELECT * from posts WHERE post_cat_id=\"'+request.query.category+'\"', function (error, results, fields) {

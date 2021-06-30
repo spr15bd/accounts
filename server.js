@@ -664,6 +664,7 @@ app.get("/", (request, response) => {
   sess=request.session;
   response.render('index', { 
                                   userData: data,
+                                  title: '',
                                   //userPosts: results,
                                   sess:sess
       });

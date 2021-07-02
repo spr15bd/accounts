@@ -12,7 +12,29 @@
            <!-- Blog Entries Column -->
             <div class="col-md-8">
              <%
-             
+               if (title!=null && title.length!=0) {
+                 console.log("This is the vendor review page.");
+            %>
+               <div>
+                 
+              
+                <form action="/invoice_input" method="POST">
+                      <div class="form-group">
+                        Invoice Number:
+                        <input type="text" name="inv_num" class="form-control" placeholder="User name">                         
+                      </div>
+                      <div class="input-group">
+                        Invoice Date:
+                        <input type="text" name="inv_date" class="form-control" placeholder="Password">
+                        <span class="input-group-btn"><button class="btn btn-success">Enter invoice</button></span>
+                                                             
+                                                             
+                                              
+                      </div>                                                                                 
+                    </form> 
+                </div> 
+            <%  
+               }
               if(userData != null && userData.length!=0){
                 console.log("there is data in userData, num records: "+userData.length);
                 userData.forEach(function(invoices){

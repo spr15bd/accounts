@@ -47,7 +47,7 @@ app.get("/vendor_review", (request, response) => {
     console.log('The solution is: ' +results);
     invoices = results;
     response.render('index', { 
-                                title: 'User List', userData: invoices,
+                                title: 'vendor_review', userData: invoices,
                                 sess:sess
     });
   });
@@ -664,6 +664,7 @@ app.get("/", (request, response) => {
   sess=request.session;
   response.render('index', { 
                                   userData: data,
+                                  title: '',
                                   //userPosts: results,
                                   sess:sess
       });

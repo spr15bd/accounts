@@ -56,7 +56,7 @@ app.get("/vendor_review", (request, response) => {
 app.get("/enter_invoices", (request, response) => {
   sess=request.session;
   response.render('index', { 
-                                title: 'vendor_review', userData: invoices,
+                                title: 'enter_invoices', userData: invoices,
                                 sess:sess
   });
   

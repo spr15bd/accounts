@@ -12,21 +12,23 @@
            <!-- Blog Entries Column -->
             <div class="col-md-8">
              <%
-               if (title=="vendor_review") {
+               if (title=="enter_invoices") {
                  console.log("This is the vendor review page.");
             %>
                <div>
                  
               
-                <form action="/invoice_input" method="POST">
-                      <div class="form-group">
+                <form action="/input-invoices" method="POST">
+                      <br>
+                      <br>
+                      <div class="input-group">
                         Invoice Number:
                         <input type="text" name="inv_num" class="form-control" placeholder="User name">                         
                       </div>
                       <div class="input-group">
                         Invoice Date:
                         <input type="text" name="inv_date" class="form-control" placeholder="Password">
-                        <span class="input-group-btn"><button class="btn btn-success">Enter invoice</button></span>
+                        <span class="input-group-btn"><button class="btn btn-success">Next invoice</button></span>
                                                              
                                                              
                                               

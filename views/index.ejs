@@ -13,8 +13,8 @@
             <div class="col-md-8">
              <%
                if (title=="enter_invoices") {
-                 console.log("This is the vendor review page.");
-            %>
+                 console.log("This is the invoice input page.");
+              %>
                <div>
                  
               
@@ -38,13 +38,27 @@
                     </form> 
                 </div> 
             <%  
-               }
-              if(userData != null && userData.length!=0){
-                console.log("there is data in userData, num records: "+userData.length);
-                userData.forEach(function(invoices){
-                  console.log(invoices.invoice_no);
-                  inv_num = invoices.invoice_no;
-                  inv_date = invoices.invoice_date;
+               } else if (title=="vendor_review") {
+             
+                if(userData != null && userData.length!=0){
+                  console.log("there is data in userData, num records: "+userData.length);
+                  userData.forEach(function(invoices){
+                    console.log(invoices.invoice_no);
+                    inv_num = invoices.invoice_no;
+                    inv_date = invoices.invoice_date;
+                %> 
+                    <h2>
+                      <a href="">Invoice Date: <%=inv_date%></a>
+                    </h2>
+                    <p class="lead">
+                      <a href="index.php">Invoice number: <%=inv_num%></a>
+                    </p>
+                    <%=invoices.invoice_id%>
+                    <hr>
+              <%
+                  });
+                }
+              
                 
              %>
               
@@ -54,15 +68,8 @@
                     <small>A simple nodeJS accounting system</small>
                 </h1>
 
-                <!-- First Blog Post -->
-                <h2>
-                    <a href="">Invoice Date: <%=inv_date%></a>
-                </h2>
-                <p class="lead">
-                    by <a href="index.php">Invoice number: <%=inv_num%></a>
-                </p>
-                  <%=invoices.invoice_id%>
-                <hr>
+                
+                
               
               
                 <hr>
@@ -75,7 +82,7 @@
                 
 
            
-              <%  });} else { %> <br><br><br>
+              <%  } else { %> <br><br><br>
               
               <h1><div class="alert alert-danger">Home Page</div></h1> <%
             

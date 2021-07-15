@@ -28,23 +28,39 @@
                         <input type="text" name="inv_num" class="form-control" placeholder="Invoice Number">                         
                       </div>
                       <div class="form-group">
-                        Invoice Amount:
-                        <input type="text" name="inv_amt" class="form-control" placeholder="Invoice Amount">                         
+                        Invoice Net Amount:
+                        <input type="text" name="inv_net" class="form-control" placeholder="Invoice Net Amount">                         
+                      </div>
+                      <div class="form-group">
+                        Invoice VAT Amount:
+                        <input type="text" name="inv_vat" class="form-control" placeholder="Invoice VAT Amount">                         
                       </div>
                       <div class="form-group">
                         Invoice Date:
-                        <input type="text" name="inv_code" class="form-control" placeholder="Invoice Code">
-                      </div> 
-                      <div class="form-group">
-                        Invoice Code:
                         <input type="text" name="inv_date" class="form-control" placeholder="Invoice Date">
                       </div>
+                      <div class="form-group">
+                        Invoice Description:
+                        <input type="text" name="inv_desc" class="form-control" placeholder="Invoice Description">
+                      </div>
+                      <div class="form-group">
+                        Invoice Office:
+                        <input type="text" name="inv_office" class="form-control" placeholder="Invoice Office">
+                      </div>
+                      <div class="form-group">
+                        Invoice Overhead:
+                        <input type="text" name="inv_overhead" class="form-control" placeholder="Invoice Overhead">
+                      </div>
                       
-                      <div class="form-group-append">
-                        <button class="btn btn-success">Next invoice</button> 
+                      
+                      <div class="form-group">
+                        <button class="btn btn-success">Post invoices</button> 
                       </div>
                   </div>
                     </form> 
+                    <div class="form-group">
+                        <button class="btn btn-success">Next invoice</button> 
+                      </div>
                 </div> 
             <%  
                } else if (title=="vendor_review") {

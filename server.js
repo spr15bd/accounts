@@ -90,6 +90,7 @@ app.get("/payment_processing", (request, response) => {
 });
 
 app.post("/input_invoices", (request, response) => {
+  console.log("enter invoice(s)");
   connection.query('INSERT INTO invoices VALUES ('+request.body.invoice_no);
 });
 

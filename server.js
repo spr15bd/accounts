@@ -89,6 +89,11 @@ app.get("/payment_processing", (request, response) => {
   
 });
 
+app.post("/input_invoices", (request, response) => {
+  console.log("enter invoice(s)");
+  connection.query('INSERT INTO invoices VALUES ('+request.body.invoice_no);
+});
+
 app.get("/category", (request, response) => {
   sess=request.session;
   connection.query('SELECT * from posts WHERE post_cat_id=\"'+request.query.category+'\"', function (error, results, fields) {

@@ -15,7 +15,7 @@ On the front-end,
 
 On the back-end,
 
-- the starting point for this app is the file `server.js` - from here you can choose to enter invoices, view the purchase ledger, 
+- the app starts at `server.js` - from here you can choose to enter invoices, view the purchase ledger, 
   set up a new supplier, view the posting log, or pay invoices
 - add frameworks and packages in `package.json`
 - safely store app secrets in `.env` (nobody can see this but you and people you invite)
